@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const morgan = require('morgan');
 const movies = require('./Movies.json');
 const allow = require('./Allow.json');
@@ -7,6 +8,7 @@ const app = express();
 const port = 4000;
 
 app.use(express.json());
+app.use(cors());
 app.use(morgan('dev'));
 
 app.all('/movies', (req, res, next) => {
