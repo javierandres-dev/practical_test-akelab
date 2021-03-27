@@ -84,6 +84,9 @@ a:active {
   border: none;
   border-bottom: thin solid var(--green);
 }
+.form input:focus {
+  outline: none;
+}
 .form button {
   padding: 1rem;
   background-color: var(--purple);

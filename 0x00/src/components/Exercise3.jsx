@@ -3,7 +3,6 @@ import Aside from './Aside';
 
 const Exercise3 = () => {
     const [message, setMessage] = useState('');
-    const [value, setValue] = useState('');
 
   return (
     <>
