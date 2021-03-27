@@ -1,32 +1,16 @@
 import React, { useState } from 'react';
+import Aside from './Aside';
+import valueIsValid from '../helpers/valueIsValid';
 
-const Exercise2 = ({setMessage}) => {
+const Exercise2 = () => {
+    const [message, setMessage] = useState('');
   const [value, setValue] = useState('');
-  setMessage('');
 
 const handleChange = (e) => setValue(e.target.value);
 
-const valueIsValid = () => {
-  if (value === '') {
-    setMessage('Error: Por favor ingrese un número entero igual o mayor a 1');
-    return false;
-  } else if (isNaN(value)) {
-    setMessage('Error: esto no es un número entero');
-    return false;
-  } else if (value.includes('.')) {
-    setMessage('Error: dede ingresar un número entero, no se acepta número flotante');
-    return false;
-  } else if (value < 1) {
-    setMessage('Error: el número debe ser igual o mayor a 1');
-    return false;
-  } else {
-      return true;
-  }
-}
-
 const handleSubmit = (e)=> {
   e.preventDefault();
-  if (valueIsValid()) {
+  if (valueIsValid(value) === true) {
     const num = parseInt(value);
     let sequenceAkelab = [];
     for (let i = 1; i <= num; i++) {
@@ -42,18 +26,23 @@ const handleSubmit = (e)=> {
         sequenceAkelab.push(i);
       }
     }
-    setMessage(sequenceAkelab.join(', '))
+    setMessage(`Secuencia AKELAB: ${sequenceAkelab.join(', ')}`)
+  } else {
+    setMessage(valueIsValid(value))
   }
 }
 
   return (
-    <main role='main' className='main'>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="number">Ingrese un número entero igual o mayor a 1</label>
-        <input type="text" name="number" id="number" placeholder='6' onChange={handleChange}/>
-        <button type="submit">mostrar secuencia</button>
-      </form>
-    </main>
+    <>
+      <main role='main' className='main'>
+        <form onSubmit={handleSubmit} className='form'>
+          <label htmlFor="number">Ingrese un número entero igual o mayor a 1</label>
+          <input type="text" name="number" id="number" placeholder='20' onChange={handleChange}/>
+          <button type="submit">Mostrar Secuencia</button>
+        </form>
+      </main>
+      <Aside message={message} />
+    </>
   )
 }
 

@@ -60,18 +60,48 @@ a:active {
   padding: 1rem;
   text-transform: uppercase;
 }
-.main {
-  width: 92%;
-  margin: auto;
-  text-align: center;
-}
+.main,
 .aside {
   width: 92%;
   margin: auto;
   text-align: center;
 }
+.main h1,
+.main h2 {
+  font-weight: normal;
+}
+.form {
+  width: 30rem;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+.form label {
+  font-size: 1.4rem;
+}
+.form input {
+  margin: 1rem 0;
+  border: none;
+  border-bottom: thin solid var(--green);
+}
+.form button {
+  padding: 1rem;
+  background-color: var(--purple);
+  color: var(--light);
+  border: none;
+  border-radius: 1rem;
+  transition: all 0.2s ease-in-out;
+}
+.form button:hover {
+  background-color: var(--green);
+  cursor: pointer;
+}
+.form button:focus {
+  outline: none;
+}
 .footer {
   text-align: center;
+  font-size: 1.2rem;
 }
 @media screen and (min-width: 768px) {
   .logo {
@@ -81,8 +111,20 @@ a:active {
     flex-direction: row;
     align-items: center;
   }
-
   .link {
     margin: 0 1rem;
+  }
+  .main,
+  .aside {
+    width: 720px;
+  }
+  .form {
+    width: 32rem;
+  }
+  .form label {
+    font-size: 1.6rem;
+  }
+  .footer {
+    font-size: 1.4rem;
   }
 }
