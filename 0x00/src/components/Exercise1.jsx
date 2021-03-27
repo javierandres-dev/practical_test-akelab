@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
-import Aside from './Aside';
 
-const Test1 = () => {
+const Exercise1 = ({setMessage}) => {
   const [value, setValue] = useState('');
-  const [message, setMessage] = useState('');
 
   const fibonacci = (x) => {
     let aux = 1, sequence = 0, buffer;
@@ -51,17 +49,14 @@ const handleSubmit = (e)=> {
 }
 
   return (
-    <>
-      <main role='main'>
-        <form onSubmit={handleSubmit}>
-          <label htmlFor="number">Ingrese un número entero igual o mayor a 1</label>
-          <input type="text" name="number" id="number" placeholder='6' onChange={handleChange}/>
-          <button type="submit">Serie Fibonacci</button>
-        </form>
-      </main>
-      <Aside message={message}/>
-    </>
+    <main role='main'>
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="number">Ingrese un número entero igual o mayor a 1</label>
+        <input type="text" name="number" id="number" placeholder='6' onChange={handleChange}/>
+        <button type="submit">Serie Fibonacci</button>
+      </form>
+    </main>
   )
 }
 
-export default Test1
+export default Exercise1;

@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
-import Aside from './Aside';
 
-const Test2 = () => {
+const Exercise2 = ({setMessage}) => {
   const [value, setValue] = useState('');
-  const [message, setMessage] = useState('');
 
 const handleChange = (e) => setValue(e.target.value);
 
@@ -48,17 +46,14 @@ const handleSubmit = (e)=> {
 }
 
   return (
-    <>
-      <main role='main'>
-        <form onSubmit={handleSubmit}>
-          <label htmlFor="number">Ingrese un número entero igual o mayor a 1</label>
-          <input type="text" name="number" id="number" placeholder='6' onChange={handleChange}/>
-          <button type="submit">mostrar secuencia</button>
-        </form>
-      </main>
-      <Aside message={message}/>
-    </>
+    <main role='main'>
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="number">Ingrese un número entero igual o mayor a 1</label>
+        <input type="text" name="number" id="number" placeholder='6' onChange={handleChange}/>
+        <button type="submit">mostrar secuencia</button>
+      </form>
+    </main>
   )
 }
 
-export default Test2;
+export default Exercise2;
