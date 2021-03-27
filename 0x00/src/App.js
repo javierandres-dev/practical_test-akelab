@@ -16,7 +16,7 @@ function App() {
       <Header />
       <Switch>
         <Route exact path='/'>
-          <Home />
+          <Home setMessage={setMessage} />
         </Route>
         <Route exact path='/exercise1'>
           <Exercise1 setMessage={setMessage} />

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 const Exercise2 = ({setMessage}) => {
   const [value, setValue] = useState('');
+  setMessage('');
 
 const handleChange = (e) => setValue(e.target.value);
 
@@ -46,7 +47,7 @@ const handleSubmit = (e)=> {
 }
 
   return (
-    <main role='main'>
+    <main role='main' className='main'>
       <form onSubmit={handleSubmit}>
         <label htmlFor="number">Ingrese un número entero igual o mayor a 1</label>
         <input type="text" name="number" id="number" placeholder='6' onChange={handleChange}/>

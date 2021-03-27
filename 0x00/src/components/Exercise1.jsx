@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 const Exercise1 = ({setMessage}) => {
   const [value, setValue] = useState('');
+  setMessage('');
 
   const fibonacci = (x) => {
     let aux = 1, sequence = 0, buffer;
@@ -49,7 +50,7 @@ const handleSubmit = (e)=> {
 }
 
   return (
-    <main role='main'>
+    <main role='main' className='main'>
       <form onSubmit={handleSubmit}>
         <label htmlFor="number">Ingrese un número entero igual o mayor a 1</label>
         <input type="text" name="number" id="number" placeholder='6' onChange={handleChange}/>
