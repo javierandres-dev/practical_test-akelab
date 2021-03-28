@@ -106,6 +106,8 @@ a:active {
   text-align: center;
   font-size: 1.2rem;
 }
+.movies {
+}
 @media screen and (min-width: 768px) {
   .logo {
     margin-left: 1rem;

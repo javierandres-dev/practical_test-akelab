@@ -1,6 +1,4 @@
-import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import getMovies from './helpers/getMovies';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './components/Home';
@@ -10,17 +8,6 @@ import Exercise3 from './components/Exercise3';
 import './App.css';
 
 function App() {
-  const [genres, setGenres] = useState(undefined);
-  const [results, setResults] = useState(undefined);
-
-  useEffect(() => {
-    (async () => {
-      const movies = await getMovies();
-      setGenres(movies.data.genres);
-      setResults(movies.data.results);
-    })();
-  }, []);
-
   return (
     <Router>
       <Header />
@@ -35,7 +22,7 @@ function App() {
           <Exercise2 />
         </Route>
         <Route exact path='/exercise3'>
-          <Exercise3 genres={genres} results={results} />
+          <Exercise3 />
         </Route>
       </Switch>
       <Footer />
