@@ -4,7 +4,7 @@ import Nav from './Nav';
 const Header = () => {
   return (
     <header className='header'>
-      <figure className='logo'>
+      <figure>
         <img src="./logo.png" alt="Akelab logo"/>
       </figure>
       <Nav />
@@ -12,4 +12,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default Header;

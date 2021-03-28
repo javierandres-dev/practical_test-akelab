@@ -2,7 +2,7 @@ import React from 'react';
 
 const Aside = ( {message} ) => {
   return (
-    <aside className='aside'>
+    <aside className='container'>
       <p>{message}</p>
     </aside>
   )

@@ -34,8 +34,9 @@ const handleSubmit = (e)=> {
 
   return (
     <>
-      <main role='main' className='main'>
-        <form onSubmit={handleSubmit} className='form'>
+      <main role='main' className='container'>
+        <h1>Mostrar secuencia Fibonacci</h1>
+        <form onSubmit={handleSubmit}>
           <label htmlFor="number">Ingrese un número entero igual o mayor a 1</label>
           <input type="text" name="number" id="number" placeholder='6' onChange={handleChange}/>
           <button type="submit">Mostrar Secuencia</button>

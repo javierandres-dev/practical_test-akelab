@@ -17,7 +17,7 @@ html {
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   color: var(--dark);
 }
 img {
@@ -46,7 +46,7 @@ a:active {
   align-items: center;
   padding: 1rem;
 }
-.logo {
+.header figure {
   width: 16rem;
   margin: 0;
 }
@@ -55,39 +55,35 @@ a:active {
   flex-direction: column;
   align-items: center;
 }
-.link {
+.nav a {
   margin: 0.5rem 0;
   padding: 1rem;
   text-transform: uppercase;
 }
-.main,
-.aside {
+.container {
   width: 92%;
   margin: auto;
   text-align: center;
 }
-.main h1,
-.main h2 {
+.container h1,
+.container h2 {
   font-weight: normal;
 }
-.form {
+.container form {
   width: 30rem;
   margin: auto;
   display: flex;
   flex-direction: column;
 }
-.form label {
-  font-size: 1.4rem;
-}
-.form input {
+.container form input {
   margin: 1rem 0;
   border: none;
   border-bottom: thin solid var(--green);
 }
-.form input:focus {
+.container form input:focus {
   outline: none;
 }
-.form button {
+.container form button {
   padding: 1rem;
   background-color: var(--purple);
   color: var(--light);
@@ -95,20 +91,59 @@ a:active {
   border-radius: 1rem;
   transition: all 0.2s ease-in-out;
 }
-.form button:hover {
+.container form button:hover {
   background-color: var(--green);
   cursor: pointer;
 }
-.form button:focus {
+.container form button:focus {
   outline: none;
+}
+.ta-l {
+  text-align: left;
 }
 .footer {
   text-align: center;
   font-size: 1.2rem;
 }
 .movies {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding: 1rem;
+}
+.movie {
+  border: 1px solid var(--dark);
+  border-radius: 2rem;
+  padding: 1rem;
+  font-size: 1.4rem;
+  position: relative;
+}
+.movie h2 {
+  margin: 1rem;
+  font-size: 1.6rem;
+}
+.movie img {
+  width: auto;
+  height: 24rem;
+  float: left;
+  margin-right: 1rem;
+}
+.movie div {
+  position: absolute;
+  left: 18rem;
+  bottom: 0;
+}
+.movie div p {
+  line-height: 0.4;
+  font-size: 1.3rem;
+}
+.movie div span {
+  font-weight: bold;
 }
 @media screen and (min-width: 768px) {
+  body {
+    font-size: 1.6rem;
+  }
   .logo {
     margin-left: 1rem;
   }
@@ -131,5 +166,27 @@ a:active {
   }
   .footer {
     font-size: 1.4rem;
+  }
+}
+/* MEDIA QUERIES
+  ============================= */
+@media screen and (min-width: 480px) {
+  .container {
+    max-width: 420px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .container {
+    max-width: 960px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
   }
 }
