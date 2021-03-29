@@ -35,7 +35,7 @@ const handleSubmit = (e)=> {
   return (
     <>
       <main role='main' className='container'>
-        <h1>Mostrar secuencia Akelab</h1>
+        <h1 className='ta-center'>Mostrar secuencia Akelab</h1>
         <form onSubmit={handleSubmit}>
           <label htmlFor="number">Ingrese un número entero igual o mayor a 1</label>
           <input type="text" name="number" id="number" placeholder='20' onChange={handleChange}/>

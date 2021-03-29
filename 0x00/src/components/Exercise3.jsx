@@ -50,7 +50,7 @@ getMovies('http://localhost:4000/movies?Akelab=123456789');
 
   return (
       <main role='main' className='container'>
-        <h1 className='ta-l'>Películas</h1>
+        <h1 className='ta-left'>Películas</h1>
         <div className='movies'>
         {show ? (
         movies.map((el) => (

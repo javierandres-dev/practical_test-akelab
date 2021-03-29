@@ -1,9 +1,24 @@
+/* SUMMARY
+  0. Custom properties
+  1. Base
+  2. Header
+  3. Nav
+  4. Footer
+  5. Global
+  6. Helpers
+  7. Movies
+  8. Media queries
+  ============================= */
+/* 0. CUSTOM PROPERTIES
+  ============================= */
 :root {
   --purple: #7f3f97;
   --green: #18bc9c;
   --dark: #233140;
   --light: white;
 }
+/* 1. BASE
+  ============================= */
 html {
   font-size: 62.5%;
   box-sizing: border-box;
@@ -19,6 +34,10 @@ body {
     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: 1.4rem;
   color: var(--dark);
+}
+h1,
+h2 {
+  font-size: 1.6rem;
 }
 img {
   width: 100%;
@@ -40,6 +59,8 @@ a:hover {
 a:active {
   color: var(--dark);
 }
+/* 2. HEADER
+  ============================= */
 .header {
   display: flex;
   justify-content: space-between;
@@ -50,6 +71,8 @@ a:active {
   width: 16rem;
   margin: 0;
 }
+/* 3. NAV
+  ============================= */
 .nav {
   display: flex;
   flex-direction: column;
@@ -60,23 +83,28 @@ a:active {
   padding: 1rem;
   text-transform: uppercase;
 }
-.container {
-  width: 92%;
-  margin: auto;
+/* 4. FOOTER
+  ============================= */
+.footer {
   text-align: center;
+  font-size: 1.2rem;
 }
-.container h1,
-.container h2 {
-  font-weight: normal;
+/* 5. GLOBAL
+  ============================= */
+.container {
+  width: 96%;
+  margin: auto;
 }
 .container form {
   width: 30rem;
   margin: auto;
   display: flex;
   flex-direction: column;
+  text-align: center;
 }
 .container form input {
-  margin: 1rem 0;
+  width: 20rem;
+  margin: 1rem auto;
   border: none;
   border-bottom: thin solid var(--green);
 }
@@ -84,6 +112,8 @@ a:active {
   outline: none;
 }
 .container form button {
+  width: 20rem;
+  margin: auto;
   padding: 1rem;
   background-color: var(--purple);
   color: var(--light);
@@ -98,95 +128,119 @@ a:active {
 .container form button:focus {
   outline: none;
 }
-.ta-l {
-  text-align: left;
-}
-.footer {
+/* 6. HELPERS
+  ============================= */
+.ta-center {
   text-align: center;
-  font-size: 1.2rem;
 }
-.movies {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-  padding: 1rem;
+.fw-normal {
+  font-weight: normal;
 }
+/* 7. MOVIES
+  ============================= */
 .movie {
   border: 1px solid var(--dark);
   border-radius: 2rem;
   padding: 1rem;
-  font-size: 1.4rem;
-  position: relative;
+  margin-bottom: 1rem;
 }
 .movie h2 {
   margin: 1rem;
-  font-size: 1.6rem;
-}
-.movie img {
-  width: auto;
-  height: 24rem;
-  float: left;
-  margin-right: 1rem;
+  font-weight: bold;
 }
 .movie div {
-  position: absolute;
-  left: 18rem;
   bottom: 0;
 }
 .movie div p {
-  line-height: 0.4;
-  font-size: 1.3rem;
+  margin: 0.2rem 0;
 }
 .movie div span {
   font-weight: bold;
 }
-@media screen and (min-width: 768px) {
-  body {
-    font-size: 1.6rem;
-  }
-  .logo {
-    margin-left: 1rem;
-  }
-  .nav {
-    flex-direction: row;
-    align-items: center;
-  }
-  .link {
-    margin: 0 1rem;
-  }
-  .main,
-  .aside {
-    width: 720px;
-  }
-  .form {
-    width: 32rem;
-  }
-  .form label {
-    font-size: 1.6rem;
-  }
-  .footer {
-    font-size: 1.4rem;
-  }
-}
-/* MEDIA QUERIES
+/* 8. MEDIA QUERIES
   ============================= */
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 576px) {
   .container {
-    max-width: 420px;
+    max-width: 540px;
+  }
+  .container form {
+    width: 32rem;
   }
 }
 @media screen and (min-width: 768px) {
   .container {
     max-width: 720px;
   }
+  .container form {
+    width: 34rem;
+  }
+  .movies {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 992px) {
+  body {
+    font-size: 1.6rem;
+  }
+  h1,
+  h2 {
+    font-size: 1.8rem;
+  }
+  .footer {
+    font-size: 1.4rem;
+  }
   .container {
     max-width: 960px;
+  }
+  .container form {
+    width: 36rem;
+  }
+  .movie {
+    font-size: 1.4rem;
+    position: relative;
+  }
+  .movie h2 {
+    text-align: left;
+  }
+  .movie img {
+    width: auto;
+    height: 24rem;
+    float: left;
+    margin-right: 1rem;
+  }
+  .movie > p {
+    position: absolute;
+    top: 4rem;
+    left: 18rem;
+    padding-right: 1rem;
+  }
+  .movie div {
+    position: absolute;
+    left: 18rem;
+    bottom: 1rem;
+  }
+  .movie div span {
+    font-weight: bold;
   }
 }
 @media screen and (min-width: 1200px) {
   .container {
     max-width: 1140px;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+  .movies {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .movie > p {
+    top: 3rem;
+  }
+  .movie div {
+    bottom: 0;
   }
 }
