@@ -12,7 +12,7 @@ Prueba de selección JavaScript Akelab
 * React
 
 ## Directories
-:open_file_folder: 0x00 Front-End
+:open_file_folder: 0x00 Front-End  
 :open_file_folder: 0x01 Back-End
 
 ## Instructions
